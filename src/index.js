@@ -2,10 +2,13 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import App from './App';
+import List from './components/List';
 var {Provider} = require('react-redux');
-ReactDOM.render( 
-    <App/>, 
-    document.getElementById("root")
-);
+var store = require('./examples.js')
+
+ReactDOM.render(
+    <Provider store={store}>
+         <List />
+    </Provider>,
+    document.getElementById('root'));
+
