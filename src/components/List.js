@@ -8,7 +8,7 @@ export default class List extends Component {
     super(props);
 
     this.state = {
-      array: ["Android", "iOS", "NodeJS"]
+      array: ["banana", "apple", "lemon"]
     };
   }
 
@@ -35,6 +35,4 @@ export default class List extends Component {
     );
   }
 }
-// module.exports = connect(function(state){
-//     return {array: state.array}
-// })(List);
+

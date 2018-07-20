@@ -1,22 +1,16 @@
 import React, { Component } from "react";
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 class NoteForm extends Component {
   // prevent load page
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault();
     this.props.handleAddNote(this.refs.myInput.value);
-    this.refs.myInput.value = '';
-    this.toggle();
+    this.refs.myInput.value = "";
   }
 
-  toggle(){
-    this.state.isRight = !this.state.isRight;
-    this.setState(this.state);
-  }
-
-  render() {  
-    if (this.state.isRight) return (
-      <form onSubmit={this.handleSubmit.bind(this)} > 
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <input type="text" placeholder="Enter your task" ref="myInput" />
         <button>Add</button>
       </form>
@@ -26,6 +20,4 @@ class NoteForm extends Component {
 
 export default NoteForm;
 
-// module.exports = connect(function(state){
-//   return {isRight: state.isRight}
-// })(NoteForm)
+

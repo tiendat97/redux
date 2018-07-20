@@ -1,6 +1,7 @@
-import React from 'react';
-var redux = require('redux'); // import thu vien redux
-``
+
+// var redux = require('redux'); // import redux library
+// import redux from 'redux';
+var redux = require('redux');
 var arrayReducer = (state = ['banana', 'apple', 'orange'], action) =>{
     switch (action.type) {
         case 'Add_Item':
@@ -23,13 +24,27 @@ var isRightReducer = (state = false, action) =>{
     return state;
 }
 
+// store.dispatch({
+//     type: 'Add_Item',
+//     item: 'tiendat'    
+// })
+// console.log(store.getState())
+
 var reducer = redux.combineReducers({
     array: arrayReducer,
     isRight: isRightReducer
 });
 
+
+
 var store = redux.createStore(reducer); // tao mot store luu tru
 
 module.exports = { store };
 
-
+// module.exports = function(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.about = function() {
+//         console.log(this.name +' is '+ this.age +' years old');
+//     };
+// };
