@@ -3,7 +3,7 @@ import Note from "./Note";
 import NoteForm from "./NoteForm"
 import {connect} from 'react-redux';
 
-export default class List extends Component {
+class List extends Component {
   constructor(props) {
     super(props);
 
@@ -36,3 +36,10 @@ export default class List extends Component {
   }
 }
 
+var hello = state =>{
+  return {
+    array: state.array
+  }
+}
+
+export default connect(hello)(List)

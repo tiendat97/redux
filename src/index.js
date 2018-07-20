@@ -7,8 +7,10 @@ var {Provider} = require('react-redux');
 var store = require('./reducers.js')
 
 ReactDOM.render(
-    <Provider store={ store } >
+    <Provider store = { store } >
          <List />
     </Provider>,
     document.getElementById('root'));
+
+
 
