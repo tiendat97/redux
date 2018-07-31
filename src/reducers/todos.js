@@ -15,6 +15,7 @@ const todos = (state = [], action) => {
           todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
       );
     case "REMOVE_TODO":
+      console.log(action)
       return state.filter(todo => todo.id !== action.id);
 
     default:

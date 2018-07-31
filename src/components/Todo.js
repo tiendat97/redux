@@ -2,15 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import RemoveTodo from "../containers/RemoveTodo";
 
-const Todo = ({ onClick, completed, text }) => (
+const Todo = ({ onClick, completed, text, id }) => (
   <ul>
     <li onClick={onClick}
     style={{
       textDecoration: completed ? "line-through" : "none"
     }}>
-      {text} 
+      {text} {id}
     </li>
-    <RemoveTodo/>
+    <RemoveTodo id={id} />
   </ul>
   
 );
