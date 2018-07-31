@@ -8,7 +8,7 @@ const Todo = ({ onClick, completed, text, id }) => (
     style={{
       textDecoration: completed ? "line-through" : "none"
     }}>
-      {text} {id}
+      {text}
     </li>
     <RemoveTodo id={id} />
   </ul>
