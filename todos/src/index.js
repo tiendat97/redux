@@ -1,6 +1,6 @@
 import React from 'react'
-import ReactDOM, { render } from 'react-dom'
-import { createStore } from 'redux'
+import { render } from 'react-dom'
+import  { createStore }  from 'redux';
 import { Provider } from 'react-redux'
 import App from './components/App'
 import rootReducer from './reducers'
@@ -8,8 +8,8 @@ import rootReducer from './reducers'
 const store = createStore(rootReducer)
 
 render(
-  <Provider store={store}>
+  <Provider store={ store }>
     <App />
-  </Provider>,	
+  </Provider>,
   document.getElementById('root')
 )
