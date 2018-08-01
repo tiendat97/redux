@@ -20,6 +20,16 @@ export const removeTodo = id => ({
   id 
 })
 
+export const editTodo = (id, title) =>{
+  return {  
+    type: 'EDIT_TODO',
+    payload : {
+    id : id,
+    title : title
+  }
+}
+}
+
 export const VisibilityFilters = {
   SHOW_ALL: "SHOW_ALL",
   SHOW_COMPLETED: "SHOW_COMPLETED",

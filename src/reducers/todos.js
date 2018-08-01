@@ -9,18 +9,25 @@ const todos = (state = [], action) => {
           completed: false
         }
       ];
+
     case "TOGGLE_TODO":
       return state.map(
         todo =>
           todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
       );
+
     case "REMOVE_TODO":
-      console.log(action)
-      return state.filter(todo => todo.id !== action.id);
+      return state.filter(todo => todo.id !== action.id
+    );
+
+    case "EDIT_TODO":
+      return  state.map(
+        todo => 
+          todo.id === action.id? Object.assign({}, todo, action.payload): todo
+      );
 
     default:
-      return state;
-    
+      return state;   
   }
 };
 

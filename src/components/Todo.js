@@ -1,20 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
 import RemoveTodo from "../containers/RemoveTodo";
-
+import EditTodo from "../containers/EditTodo";
 class Todo extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isEditing: false
+    };
+  }
   render(){
     return(
-  <ul>
-    <li onClick={this.props.onClick}
+      
+    <div onClick={this.props.onClick}
     style={{
       textDecoration: this.props.completed ? "line-through" : "none"
     }}>
+      <tr>
       {this.props.text}
-    </li>
+      </tr>
+  <EditTodo id={this.props.id}/>  
+  <RemoveTodo id={this.props.id}/> 
+   </div>
     
-    <RemoveTodo id={this.props.id} />
-  </ul>
+    
+    
+ 
   )
 }
 }
