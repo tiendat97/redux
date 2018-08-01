@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-const Link = ({ active, children, onClick }) => (
-    <button
-       onClick={onClick}
-       disabled={active}
+class Link extends Component{
+  render(){
+    return(
+      <button
+       onClick={this.props.onClick}
+       disabled={this.props.active}
        style={{
            marginLeft: '4px',
        }}
     >
-      {children}
+      {this.props.children}
     </button>
-)
+    );
+  }
+}
 
 Link.propTypes = {
   active: PropTypes.bool.isRequired,
