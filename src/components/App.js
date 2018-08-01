@@ -8,8 +8,9 @@ class App extends React.Component {
     return(
       <div>
         <AddTodo />
-        <VisibleTodoList />
+        <br/>
         <Footer />
+        <VisibleTodoList />
       </div>
     )
   }

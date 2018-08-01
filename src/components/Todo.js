@@ -12,6 +12,7 @@ class Todo extends React.Component {
     }}>
       {this.props.text}
     </li>
+    
     <RemoveTodo id={this.props.id} />
   </ul>
   )
