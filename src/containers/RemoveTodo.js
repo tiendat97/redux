@@ -8,7 +8,7 @@ const RemoveTodo = ({ id, dispatch }) => {
             <button onClick={ e => {
                 e.preventDefault();
                 dispatch(removeTodo(id))
-                console.log(id)
+             
                 //console.log(dispatch(removeTodo()))
             }}>
                 Remove Todo

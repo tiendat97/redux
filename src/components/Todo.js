@@ -2,18 +2,34 @@ import React from "react";
 import PropTypes from "prop-types";
 import RemoveTodo from "../containers/RemoveTodo";
 
-const Todo = ({ onClick, completed, text, id }) => (
+class Todo extends React.Component {
+  render(){
+    return(
   <ul>
-    <li onClick={onClick}
+    <li onClick={this.props.onClick}
     style={{
-      textDecoration: completed ? "line-through" : "none"
+      textDecoration: this.props.completed ? "line-through" : "none"
     }}>
-      {text}
+      {this.props.text}
     </li>
-    <RemoveTodo id={id} />
+    <RemoveTodo id={this.props.id} />
   </ul>
+  )
+}
+}
+
+// const Todo = ({ onClick, completed, text, id }) => (
+//   <ul>
+//     <li onClick={onClick}
+//     style={{
+//       textDecoration: completed ? "line-through" : "none"
+//     }}>
+//       {text}
+//     </li>
+//     <RemoveTodo id={id} />
+//   </ul>
   
-);
+// );
 
 Todo.propTypes = {
   onClick: PropTypes.func.isRequired,
