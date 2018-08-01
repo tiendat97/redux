@@ -14,14 +14,6 @@ class TodoList extends React.Component {
   }
 }
 
-// const TodoList = ({ todos, toggleTodo }) => (
-//   <ul>
-//     {todos.map(todo => (
-//       <Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
-//     ))}
-//   </ul>
-// );
-
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({

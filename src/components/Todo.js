@@ -18,19 +18,6 @@ class Todo extends React.Component {
 }
 }
 
-// const Todo = ({ onClick, completed, text, id }) => (
-//   <ul>
-//     <li onClick={onClick}
-//     style={{
-//       textDecoration: completed ? "line-through" : "none"
-//     }}>
-//       {text}
-//     </li>
-//     <RemoveTodo id={id} />
-//   </ul>
-  
-// );
-
 Todo.propTypes = {
   onClick: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
