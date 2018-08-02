@@ -2,33 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import RemoveTodo from "../containers/RemoveTodo";
 import EditTodo from "../containers/EditTodo";
-class Todo extends React.Component {
-  constructor(props) {
-    super(props);
+import _ from "lodash";
 
-    this.state = {
-      isEditing: false
-    };
+class Todo extends React.Component {
+  render() {
+    return (
+      <div>
+        <tr
+          onClick={this.props.onClick}
+          style={{
+            textDecoration: this.props.completed ? "line-through" : "none"
+          }}
+        >
+          {this.props.text}
+        </tr>
+        <EditTodo id={this.props.id} />
+        <RemoveTodo id={this.props.id} />
+      </div>
+    );
   }
-  render(){
-    return(
-      
-    <div onClick={this.props.onClick}
-    style={{
-      textDecoration: this.props.completed ? "line-through" : "none"
-    }}>
-      <tr>
-      {this.props.text}
-      </tr>
-  <EditTodo id={this.props.id}/>  
-  <RemoveTodo id={this.props.id}/> 
-   </div>
-    
-    
-    
- 
-  )
-}
 }
 
 Todo.propTypes = {

@@ -9,9 +9,6 @@ class AddTodo extends React.Component{
       <form
         onSubmit={e => {
           e.preventDefault();
-          if (!input.value.trim()) {
-            return;
-          }
           this.props.dispatch(addTodo(input.value));
           input.value = "";
         }}
