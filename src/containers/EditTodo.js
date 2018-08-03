@@ -18,7 +18,7 @@ class EditTodo extends React.Component {
               e.preventDefault();
               this.props.dispatch(editTodo(this.props.id));
               this.props.dispatch(saveTodo(this.props.id, this.refs.editInput.value));
-              console.log(this.refs.editInput.value)
+
             }}
           >
             Save

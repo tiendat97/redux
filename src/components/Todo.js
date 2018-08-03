@@ -18,8 +18,12 @@ class Todo extends React.Component {
         >
           {this.props.text}
         </tr>
+        <tr>
         <EditTodo id={this.props.id} isEditing={this.props.isEditing}/>
+        </tr>
+        <tr>
         <RemoveTodo id={this.props.id} />
+        </tr>
       </div>
     );
   }
@@ -33,4 +37,4 @@ Todo.propTypes = {
   isEditing: PropTypes.bool.isRequired
 };
 
-export default Todo;
+export default connect()(Todo);

@@ -37,6 +37,7 @@ const todos = (state = [], action) => {
             ...todo,
             text: action.text
           } : todo );
+          
     default:
       return state;
   }
