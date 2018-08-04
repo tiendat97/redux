@@ -35,7 +35,7 @@ const todos = (state = [], action) => {
     case "SAVE_TODO":
       return _.map(state, todo => todo.id === action.id? {...todo, oldTask: this.props.task, newTask: this.refs.editInput.value} :  todo)
     default:
-      return state;   
+      return state;
   }
 };
 
