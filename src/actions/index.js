@@ -18,12 +18,19 @@ export const toggleTodo = id => ({
 export const removeTodo = id => ({
   type: "REMOVE_TODO",
   id
+
+});
+
+export const editTodo = id => ({
+    type: "EDIT_TODO",
+    id
 })
 
-export const editTodo = ({ id, title }) => ({
-  type: "EDIT_TODO",
-  id,
-  title
+export const saveTodo = (id,text) => ({
+    type: "SAVE_TODO",
+    id,
+    text
+
 })
 
 export const VisibilityFilters = {

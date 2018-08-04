@@ -7,7 +7,7 @@ const todos = (state = [], action) => {
         ...state,
         {
           id: action.id,
-          text: action.text,   
+          text: action.text,
           completed: false,
           isEditing: false
         }
@@ -24,13 +24,13 @@ const todos = (state = [], action) => {
     );
 
     case "EDIT_TODO":
-      return  _.map(state, 
-        todo => 
+      return  _.map(state,
+        todo =>
           todo.id === action.id? {
             ...todo,
-            isEditing: !todo.isEditing 
+            isEditing: !todo.isEditing
           } : todo
-    ); 
+    );
 
     case "SAVE_TODO":
       return _.map(state, todo => todo.id === action.id? {...todo, oldTask: this.props.task, newTask: this.refs.editInput.value} :  todo)
