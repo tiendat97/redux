@@ -1,4 +1,5 @@
 let nextTodoId = 0;
+let isEditing = false;
 export const addTodo = text => ({
   type: "ADD_TODO",
   id: nextTodoId++,
@@ -20,19 +21,15 @@ export const removeTodo = id => ({
   id
 });
 
-export const editTodo = (id, isEditing) => ({
+export const editTodo = id => ({
     type: "EDIT_TODO",
-    id,
-    isEditing
+    id
 })
 
-
-
-export const saveTodo = (id,oldTask, newTask) => ({
+export const saveTodo = (id,text) => ({
     type: "SAVE_TODO",
     id,
-    oldTask,
-    newTask
+    text
 })
 
 export const VisibilityFilters = {
