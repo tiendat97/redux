@@ -1,4 +1,5 @@
 let nextTodoId = 0;
+
 export const addTodo = text => ({
   type: "ADD_TODO",
   id: nextTodoId++,
@@ -18,7 +19,6 @@ export const toggleTodo = id => ({
 export const removeTodo = id => ({
   type: "REMOVE_TODO",
   id
-
 });
 
 export const editTodo = id => ({
@@ -30,11 +30,10 @@ export const saveTodo = (id,text) => ({
     type: "SAVE_TODO",
     id,
     text
-
 })
 
 export const VisibilityFilters = {
   SHOW_ALL: "SHOW_ALL",
   SHOW_COMPLETED: "SHOW_COMPLETED",
   SHOW_ACTIVE: "SHOW_ACTIVE"
-}
+};
