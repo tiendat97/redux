@@ -5,9 +5,7 @@ import EditTodo from "../containers/EditTodo";
 import { connect } from "react-redux";
 
 class Todo extends React.Component {
-
   render() {
-
     return (
       <div>
         <tr
