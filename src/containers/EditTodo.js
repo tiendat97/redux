@@ -52,7 +52,6 @@ class EditTodo extends React.Component {
   }
 
   render() {
-    console.log(this.props.isEditing);
     return (
       <div>
         {this.props.isEditing
