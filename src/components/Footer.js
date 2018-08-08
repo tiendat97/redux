@@ -17,4 +17,5 @@ import { VisibilityFilters } from "../actions";
   }
 }
 
-export default Footer
+
+export default Footer;

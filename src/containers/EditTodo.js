@@ -11,14 +11,12 @@ class EditTodo extends React.Component {
             <input type="text" ref="editInput" />
           </form>
         </td>
-
         <td>
           <button
             onClick={e => {
               e.preventDefault();
               this.props.dispatch(editTodo(this.props.id));
               this.props.dispatch(saveTodo(this.props.id, this.refs.editInput.value));
-
             }}
           >
             Save
