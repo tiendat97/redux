@@ -38,9 +38,17 @@ const todos = (state = [], action) => {
             text: action.text
           } : todo );
 
+    case 'GET_DATA':
+      return {
+        ...state, 
+        text: action.task_todo,
+        id: action.id,
+        completed: action.completed
+      }
     default:
       return state;
   }
 };
 
 export default todos;
+

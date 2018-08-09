@@ -1,3 +1,5 @@
+import axios from 'axios';  
+
 let nextTodoId = 0;
 export const addTodo = text => ({
   type: "ADD_TODO",
@@ -36,3 +38,21 @@ export const VisibilityFilters = {
   SHOW_COMPLETED: "SHOW_COMPLETED",
   SHOW_ACTIVE: "SHOW_ACTIVE"
 };
+
+export function getData(){
+    return(dispatch)=>{
+        return axios.get("http://localhost:8086/notes").then((response)=>{
+            dispatch(getDataApi("#"+response.data.task_todo))
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    }
+}
+
+export function getDataApi(task){
+  return{
+      type:"GET_DATA",
+      task: task
+  }
+}
