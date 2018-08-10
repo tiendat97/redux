@@ -2,12 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { getData } from "../actions";
 
-class GetData extends React.Component {
-  render(input) {
-    return (
-        <div>{this.props.dispatch(getData())}</div>
-);
+export class GetData extends React.Component {
+  render() {
+    return <div>{this.props.dispatch(getData())}</div>;
   }
 }
 
-export default connect()(getData);
+export default connect()(GetData);

@@ -40,19 +40,16 @@ export const VisibilityFilters = {
 };
 
 export function getData(){
-    return(dispatch)=>{
-        return axios.get("http://localhost:8086/notes").then((response)=>{
-            dispatch(getDataApi("#"+response.data.task_todo))
-        })
-        .catch((error) => {
-          console.log(error);
-        })
+  const get_data = axios.get("http://localhost:8086/notes")
+  .then(response => {
+    console.log(response);
+    return response.data.results;
+  }).catch((error) => {
+    console.log(error);
+  })
+    return {
+      type: 'GET_DATA',
+      payload: get_data
     }
-}
-
-export function getDataApi(task){
-  return{
-      type:"GET_DATA",
-      task: task
   }
-}
+  

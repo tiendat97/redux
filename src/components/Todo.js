@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import RemoveTodo from "../containers/RemoveTodo";
 import EditTodo from "../containers/EditTodo";
 import { connect } from "react-redux";
-import GetData from "../containers/GetData"
+import GetData from '../containers/GetData'
+
 class Todo extends React.Component {
   render() {
     return (
@@ -22,7 +23,7 @@ class Todo extends React.Component {
         <tr>
         <RemoveTodo id={this.props.id} />
         </tr>
-        <tr><GetData/></tr>
+        <tr><GetData data={this.props.data} /></tr>
       </div>
     );
   }

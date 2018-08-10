@@ -41,10 +41,9 @@ const todos = (state = [], action) => {
     case 'GET_DATA':
       return {
         ...state, 
-        text: action.task_todo,
-        id: action.id,
-        completed: action.completed
+        data: action.payload
       }
+
     default:
       return state;
   }
