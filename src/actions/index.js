@@ -1,4 +1,4 @@
-import axios from 'axios';  
+import axios from "axios";
 
 let nextTodoId = 0;
 export const addTodo = text => ({
@@ -39,17 +39,18 @@ export const VisibilityFilters = {
   SHOW_ACTIVE: "SHOW_ACTIVE"
 };
 
-export function getData(){
-  const get_data = axios.get("http://localhost:8086/notes")
-  .then(response => {
-    console.log(response);
-    return response.data.results;
-  }).catch((error) => {
-    console.log(error);
-  })
-    return {
-      type: 'GET_DATA',
-      payload: get_data
-    }
-  }
-  
+export function getData() {
+  const get_data = axios
+    .get("http://localhost:8086/notes")
+    .then(res => {
+      // console.log(res.data)
+      return res.data;
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  return {
+    type: "GET_DATA",
+    payload: get_data
+  };
+}

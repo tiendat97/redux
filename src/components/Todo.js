@@ -23,7 +23,7 @@ class Todo extends React.Component {
         <tr>
         <RemoveTodo id={this.props.id} />
         </tr>
-        <tr><GetData data={this.props.data} /></tr>
+        <tr><GetData /></tr>
       </div>
     );
   }
