@@ -6,7 +6,7 @@ export class GetData extends React.Component {
   render() {
     return 
     <div>
-    {this.props.dispatch(getData(get_data))}
+    {this.props.dispatch(getData(this.props.get_data))}
     </div>
   }
 }
