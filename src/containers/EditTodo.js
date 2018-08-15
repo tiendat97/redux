@@ -43,6 +43,7 @@ class EditTodo extends React.Component {
             this.props.dispatch(editTodo(this.props.id));
           }}
         >
+        Edit
         </button>
       </td>
     );

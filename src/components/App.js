@@ -10,7 +10,10 @@ class App extends React.Component {
   componentDidMount(){
     axios.get(`http://localhost:8086/notes`).then(res =>{
       const data = res.data;
-      this.props.dispatch(saveTask(data))
+      var i;
+      for (i = 0; i < data.length; i++) {
+        this.props.dispatch(saveTask(data[i].id,data[i].task_todo,data[i].completed))
+      }
     })
   }
 

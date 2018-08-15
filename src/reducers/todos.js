@@ -44,7 +44,8 @@ const todos = (state = [], action) => {
         {
           id: action.id,
           text: action.text,
-          completed: action.completed
+          completed: action.completed,
+          isEditing: false
         }
       ]
       )
