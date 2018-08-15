@@ -3,20 +3,15 @@ import Footer from "./Footer";
 import AddTodo from "../containers/AddTodo";
 import VisibleTodoList from "../containers/VisibleTodoList";
 import { connect } from "react-redux";
-import { getData } from "../actions/index";
 import axios from "axios";
+import { saveTask } from '../actions'
 
 class App extends React.Component {
-  componentDidMount() {
-    const get_data = axios
-      .get("http://localhost:8086/notes")
-      .then(res => {
-        return res.data;
-        console.log(get_data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  componentDidMount(){
+    axios.get(`http://localhost:8086/notes`).then(res =>{
+      const data = res.data;
+      this.props.dispatch(saveTask(data))
+    })
   }
 
   render() {

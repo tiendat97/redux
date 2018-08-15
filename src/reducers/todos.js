@@ -2,15 +2,15 @@ import _ from "lodash";
 
 const todos = (state = [], action) => {
   switch (action.type) {
-    case "ADD_TODO":
+    case 'ADD_TODO':
       return [
         ...state,
         {
           id: action.id,
           text: action.text,
-          completed: false,
+          completed: false
         }
-      ];
+      ]
 
     case "TOGGLE_TODO":
       return _.map(
@@ -38,12 +38,17 @@ const todos = (state = [], action) => {
             text: action.text
           } : todo );
 
-    case 'GET_DATA':
-      return {
-        ...state, 
-        data: action.payload
-      }
-
+    case "SAVE_DATA":
+      return([
+        ...state,
+        {
+          id: action.id,
+          text: action.text,
+          completed: action.completed
+        }
+      ]
+      )
+    
     default:
       return state;
   }

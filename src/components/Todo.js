@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import RemoveTodo from "../containers/RemoveTodo";
 import EditTodo from "../containers/EditTodo";
 import { connect } from "react-redux";
-import GetData from '../containers/GetData'
+
 
 class Todo extends React.Component {
   render() {
@@ -15,15 +15,14 @@ class Todo extends React.Component {
             textDecoration: this.props.completed ? "line-through" : "none"
           }}
         >
-          {this.props.text}
+         {this.props.text} 
         </tr>
         <tr>
-        <EditTodo id={this.props.id} isEditing={this.props.isEditing}/>
+          <EditTodo id={this.props.id} isEditing={this.props.isEditing} />
         </tr>
         <tr>
-        <RemoveTodo id={this.props.id} />
+          <RemoveTodo id={this.props.id} />
         </tr>
-        <GetData/>
       </div>
     );
   }
