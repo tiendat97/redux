@@ -1,111 +1,127 @@
-import todos from './todos'
+import mocha from 'mocha';
 
-describe('todos reducer', () => {
-  it('should handle initial state', () => {
-    expect(
-      todos(undefined, {})
-      ).toEqual([])
-})
+import { expect } from 'chai';
+import todos from './todos';
 
-  it('should handle ADD_TODO', () => {
-    expect(
-      todos([], {
-        type: 'ADD_TODO',
-        text: 'Run the tests',
-        id: 0
-    })
-      ).toEqual([
-      {
-        text: 'Run the tests',
-        completed: false,
-        id: 0
-    }
-    ])
+const newLocal = mocha.describe;
+const describe = newLocal;
 
-      expect(
-        todos([
-        {
-          text: 'Run the tests',
-          completed: false,
-          id: 0
-      }
-      ], {
-          type: 'ADD_TODO',
-          text: 'Use Redux',
-          id: 1
-      })
+describe('todosreducer', () => {
+    let it;
+    it('shouldhandleinitialstate', () => {
+        expect(todos(undefined, {})).toEqual([]);
+    });
+
+    it('shouldhandleADD_TODO', () => {
+        expect(
+            todos([], {
+                type: 'ADD_TODO',
+                text: 'Runthetests',
+                id: 0,
+            })
         ).toEqual([
-        {
-          text: 'Run the tests',
-          completed: false,
-          id: 0
-      }, {
-          text: 'Use Redux',
-          completed: false,
-          id: 1
-      }
-      ])
+            {
+                text: 'Runthetests',
+                completed: false,
+                id: 0,
+            },
+        ]);
+        expect(
+            todos(
+                [
+                    {
+                        text: 'Runthetests',
+                        completed: false,
+
+                        id: 0,
+                    },
+                ],
+                {
+                    type: 'ADD_TODO',
+                    text: 'UseRedux',
+                    id: 1,
+                })
+        ).toEqual([
+            {
+                text: 'Runthetests',
+                completed: false,
+                id: 0,
+            },
+            {
+                text: 'UseRedux',
+                completed: false,
+                id: 1,
+            },
+        ]);
 
         expect(
-          todos([
-          {
-            text: 'Run the tests',
-            completed: false,
-            id: 0
-        }, {
-            text: 'Use Redux',
-            completed: false,
-            id: 1
-        }
-        ], {
-            type: 'ADD_TODO',
-            text: 'Fix the tests',
-            id: 2
-        })
-          ).toEqual([
-          {
-            text: 'Run the tests',
-            completed: false,
-            id: 0
-        }, {
-            text: 'Use Redux',
-            completed: false,
-            id: 1
-        }, {
-            text: 'Fix the tests',
-            completed: false,
-            id: 2
-        }
-        ])
-      })
+            todos(
+                [
+                    ({
+                        text: 'Runthetests',
+                        completed: false,
+                        id: 0,
+                    },
+                    {
+                        text: 'UseRedux',
+                        completed: false,
+                        id: 1,
+                    }),
+                ],
+                {
+                    type: 'ADD_TODO',
+                    text: 'Fixthetests',
+                    id: 2,
+                })
+        ).toEqual([
+            {
+                text: 'Runthetests',
+                completed: false,
+                id: 0,
+            },
+            {
+                text: 'UseRedux',
+                completed: false,
+                id: 1,
+            },
+            {
+                text: 'Fixthetests',
+                completed: false,
+                id: 2,
+            },
+        ]);
+    });
 
-  it('should handle TOGGLE_TODO', () => {
-    expect(
-      todos([
-      {
-        text: 'Run the tests',
-        completed: false,
-        id: 1
-    }, {
-        text: 'Use Redux',
-        completed: false,
-        id: 0
-    }
-    ], {
-        type: 'TOGGLE_TODO',
-        id: 1
-    })
-      ).toEqual([
-      {
-        text: 'Run the tests',
-        completed: true,
-        id: 1
-    }, {
-        text: 'Use Redux',
-        completed: false,
-        id: 0
-    }
-    ])
-  })
-
-})
+    it('shouldhandleTOGGLE_TODO', () => {
+        expect(
+            todos(
+                [
+                    {
+                        text: 'Runthetests',
+                        completed: false,
+                        id: 1,
+                    },
+                    {
+                        text: 'UseRedux',
+                        completed: false,
+                        id: 0,
+                    },
+                ],
+                {
+                    type: 'TOGGLE_TODO',
+                    id: 1,
+                })
+        ).toEqual([
+            {
+                text: 'Runthetests',
+                completed: true,
+                id: 1,
+            },
+            {
+                text: 'UseRedux',
+                completed: false,
+                id: 0,
+            },
+        ]);
+    });
+});

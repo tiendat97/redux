@@ -1,34 +1,24 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true
+  env: {
+    browser: true,
+    es6: true
+  },
+  extends: ["eslint:recommended", "plugin:react/recommended"],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+      modules: true
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
+    ecmaVersion: 2018
+  },
+  plugins: ["react", "import"],
+  rules: {
+    indent: ["error", 4],
+    "linebreak-style": ["error", "windows"],
+    quotes: ["error", "single"],
+    semi: ["error", "always"]
+  },
+  parserOptions: {
+    sourceType: "module"    
+  }
 };

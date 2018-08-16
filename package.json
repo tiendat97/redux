@@ -3,11 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "chai": "^4.1.2",
     "eslint": "^5.3.0",
+    "mocha": "^5.2.0",
     "react-scripts": "^1.1.4"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
@@ -20,7 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "test": "react-scripts test",
+    "test": "react-scripts test, node ./node_modules/mocha/bin/mocha",
     "eslint": "eslint --ext .js --ext .jsx src"
   }
 }

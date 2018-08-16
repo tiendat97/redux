@@ -1,18 +1,18 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import App from './components/App'
-import rootReducer from './reducers'
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import App from './components/App';
+import rootReducer from './reducers';
 import { createStore } from 'redux'; 
 
 const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 render(
-  <Provider store={ store }>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-)
+    <Provider store={ store }>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+);
