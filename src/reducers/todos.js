@@ -27,16 +27,16 @@ const todos = (state = [], action) => {
     case 'TOGGLE_TODO':
         return _.map(
             state,
-            todo => (todo.id === action.id ? { ...todo, completed: !todo.completed } : todo),
+            todo => (todo.id === action.id ? { ...todo, completed: !todo.completed } : todo)
         );
 
     case 'REMOVE_TODO':
         return _.filter(state, todo => todo.id !== action.id);
-        
+
     case 'EDIT_TODO':
         return _.map(
             state,
-            todo => (todo.id === action.id ? { ...todo, isEditing: !todo.isEditing } : todo),
+            todo => (todo.id === action.id ? { ...todo, isEditing: !todo.isEditing } : todo)
         );
 
     case 'SAVE_TODO':

@@ -6,12 +6,10 @@ module.exports = {
   extends: ["eslint:recommended", "plugin:react/recommended"],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
-      spread: true,
-      experimentalObjectRestSpread: true
+      jsx: true
     },
-    ecmaVersion: 2018 ,
-    "sourceType": "module"
+    ecmaVersion: 2018,
+    sourceType: "module"
   },
   plugins: ["react", "import"],
   rules: {
@@ -19,8 +17,5 @@ module.exports = {
     "linebreak-style": ["error", "windows"],
     quotes: ["error", "single"],
     semi: ["error", "always"]
-  },
-  parserOptions: {
-    sourceType: "module"    
   }
 };
