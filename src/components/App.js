@@ -1,19 +1,25 @@
-import React from "react";
-import Footer from "./Footer";
-import AddTodo from "../containers/AddTodo";
-import VisibleTodoList from "../containers/VisibleTodoList";
-
+import React from 'react';
+import { connect } from 'react-redux';
+import Footer from './Footer';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
+import GetData from '../containers/GetData';
 class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <AddTodo />
-        <br />
-        <Footer />
-        <VisibleTodoList />
-      </div>
-    );
-  }
+    renderGetData(){
+        <GetData/>; 
+    }
+   
+    render() {
+        return (
+            <div>
+                {this.renderGetData()}
+                <AddTodo />
+                <br />
+                <Footer />
+                <VisibleTodoList />
+            </div>
+        );
+    }
 }
 
-export default App;
+export default connect()(App);
