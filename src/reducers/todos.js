@@ -32,7 +32,7 @@ const todos = (state = [], action) => {
 
     case 'REMOVE_TODO':
         return _.filter(state, todo => todo.id !== action.id);
-
+        
     case 'EDIT_TODO':
         return _.map(
             state,

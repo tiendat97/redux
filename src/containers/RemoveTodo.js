@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removeTodo } from '../actions';
+import PropTypes from 'prop-types';
 
 class RemoveTodo extends React.Component {
     render() {
@@ -9,10 +10,10 @@ class RemoveTodo extends React.Component {
                 <button
                     onClick={(e) => {
                         e.preventDefault();
-                        this.props.removeTodo(this.props.id);
+                        this.props.dispatch(removeTodo(this.props.id));
                     }}
                 >
-          Remove Todo
+                Remove Todo
                 </button>
             </div>
         );
@@ -23,10 +24,15 @@ class RemoveTodo extends React.Component {
 //   removeTodo1: id => dispatch(removeTodo(id))
 // })
 
-const mapDispatchToProps = (dispatch) => ({
-    removeTodo: (id) => dispatch(removeTodo(id)),
-});
+// const mapDispatchToProps = (dispatch) => ({
+//     removeTodo: (id) => dispatch(removeTodo(id)),
+// });
 
-export default connect(mapDispatchToProps)(RemoveTodo);
+RemoveTodo.propTypes = {
+    id: PropTypes.number.isRequired,
+    dispatch: PropTypes.func.isRequired
+};
+
+export default connect()(RemoveTodo);
 
 // export default connect()(RemoveTodo);

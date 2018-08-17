@@ -8,11 +8,15 @@ class TodoList extends React.Component {
             <div>
                 <ul>
                     {this.props.todos.map(todo => (
-                        <li> <Todo key={todo.id} {...todo} onClick={() => { this.props.toggleTodo(todo.id); }} /></li>
+                        this.newMethod(todo)
                     ))}
                 </ul>
             </div>
         );
+    }
+
+    newMethod(todo) {
+        return <li> <Todo key={todo.id} {...todo} onClick={() => { this.props.toggleTodo(todo.id); } } /></li>;
     }
 }
 
