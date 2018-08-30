@@ -8,22 +8,19 @@ const articleStyle = {
     color: 'olive'
 };
 
-
 let NewsItem = ({ article }) => (
- 
     article ?
         <article style={articleStyle} >
             <div>
         List of task to do:
                 <h1>{article[0].id}. {article[0].task_todo}</h1>
-        
             </div>
         </article> :
         null
 );
 
 const mapStateToProps = (state) => ({
-    article : state.text, 
+    article : state.text,
 });
 
 NewsItem.propTypes = {
@@ -31,5 +28,3 @@ NewsItem.propTypes = {
 };
 
 export default connect(mapStateToProps, null)(NewsItem);
-
-
