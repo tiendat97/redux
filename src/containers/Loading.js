@@ -20,5 +20,3 @@ Loading.propTypes = {
 };
 
 export default connect(mapStateToProps, null)(Loading);
-
-

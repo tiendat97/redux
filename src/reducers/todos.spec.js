@@ -21,7 +21,7 @@ describe('todosreducer', () => {
             })
         ).toEqual([
             {
-                text: 'Runthetests',
+                text: 'Runthetests', 
                 completed: false,
                 id: 0,
             },
@@ -32,7 +32,6 @@ describe('todosreducer', () => {
                     {
                         text: 'Runthetests',
                         completed: false,
-
                         id: 0,
                     },
                 ],

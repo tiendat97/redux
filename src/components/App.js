@@ -2,6 +2,8 @@ import React from 'react';
 import Footer from './Footer';
 import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
+import Button from '../containers/Button';
+import NewsItem from '../containers/NewsItem';
 import Loading from '../containers/Loading';
 
 class App extends React.Component {
@@ -12,7 +14,9 @@ class App extends React.Component {
                 <br />
                 <Footer />
                 <VisibleTodoList />
-                <Loading />
+                <Button />
+                <Loading/>
+                <NewsItem />
             </div>
         );
     }
