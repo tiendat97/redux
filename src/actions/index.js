@@ -8,8 +8,7 @@ import {
     SAVE_DATA,
     SHOW_ALL,
     SHOW_COMPLETED,
-    SHOW_ACTIVE,
-    GET_NEWS
+    SHOW_ACTIVE
 } from './constants';
 
 const i = 0;
@@ -56,9 +55,5 @@ export const saveTask = (id, text, completed) => ({
 export const VisibilityFilters = {
     SHOW_ALL: SHOW_ALL,
     SHOW_COMPLETED: SHOW_COMPLETED,
-    SHOW_ACTIVE: SHOW_ACTIVE,
+    SHOW_ACTIVE: SHOW_ACTIVE
 };
-
-export const getNews = () => ({
-    type: GET_NEWS,
-});
